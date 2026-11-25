@@ -1,7 +1,8 @@
 {
-  "name": "Jamstacks starter",
-  "description": "A neutral Next.js foundation for Jamstacks websites.",
-  "domain": "",
+  "name": "Otter Pond Swim School",
+  "description": "Small-group swimming lessons in Seattle for babies, kids and adults. Eight levels, a weekly timetable, make-up swims and water-safety tips from Otter Pond Swim School.",
+  "domain": "next-swim-school.jamstacks.net",
+  "timeZone": "America/Los_Angeles",
   "jamstacks": {
     "siteId": "",
     "cdnUrl": "https://cdn.jamstacks.net"

@@ -1,112 +1,549 @@
 @import 'tailwindcss';
+@import '@fontsource-variable/grandstander';
+@import '@fontsource-variable/readex-pro';
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Summer session (light) */
 :root {
-  --bg: #f7f8fa;
-  --surface: #ffffff;
-  --text: #172033;
-  --muted: #526078;
-  --accent: #2457a7;
-  --accent-ink: #2457a7;
-  --on-accent: #ffffff;
-  --line: #c7cfdb;
-  --focus: #2457a7;
+  --pool-deck: #EEF9FB;
+  --tile: #FFFFFF;
+  --grout: #BFE3EA;
+  --ink: #0B2A36;
+  --ink-muted: #3E5F6D;
+  --primary: #0A6E8B;
+  --primary-ink: #0A6E8B;
+  --on-primary: #FFFFFF;
+  --water: #3CC0D8;
+  --pool-basin: #3CC0D8;
+  --art-ink: #0B2A36;
+  --water-soft: #D7F4FA;
+  --water-mid: #7AD9EA;
+  --deep: #0E4C63;
+  --deep-ink: #E8F8FB;
+  --deep-muted: #B6E1EC;
+  --coral: #FF6B57;
+  --coral-ink: #B83A27;
+  --sun: #FFD23F;
+  --sun-soft: #FFF4C7;
+  --otter: #7A4E2D;
+  --focus: #0A6E8B;
   --map-filter: none;
+  --caustic-opacity: 0.24;
+  --pool-glow: rgba(60, 192, 216, 0.22);
+  --tile-grout-line: rgba(191, 227, 234, 0.55);
+
+  /* Swim cap tokens */
+  --cap-sun: #FFD23F;
+  --cap-sun-ink: #0B2A36;
+  --cap-coral: #FF6B57;
+  --cap-coral-ink: #FFFFFF;
+  --cap-lime: #7CD346;
+  --cap-lime-ink: #0B2A36;
+  --cap-aqua: #3CC0D8;
+  --cap-aqua-ink: #0B2A36;
+  --cap-violet: #8362E6;
+  --cap-violet-ink: #FFFFFF;
+  --cap-orange: #F48126;
+  --cap-orange-ink: #0B2A36;
+  --cap-navy: #144A75;
+  --cap-navy-ink: #FFFFFF;
+  --cap-otter: #7A4E2D;
+  --cap-otter-ink: #FFFFFF;
+
   color-scheme: light;
 }
+
+/* Night swim (media dark) */
 @media (prefers-color-scheme: dark) {
- :root:not(.light) {
-  --bg: #141923;
-  --surface: #1e2633;
-  --text: #f1f5fa;
-  --muted: #b5c2d5;
-  --accent: #2457a7;
-  --accent-ink: #a9cbff;
-  --on-accent: #ffffff;
-  --line: #61708a;
-  --focus: #a9cbff;
-  --map-filter: grayscale(.4) brightness(.8);
-  color-scheme: dark;
- }
+  :root:not(.light) {
+    --pool-deck: #061F2A;
+    --tile: #0A2E3C;
+    --grout: #17485A;
+    --ink: #E4F6F9;
+    --ink-muted: #9DC3CE;
+    --primary: #0B7393;
+    --primary-ink: #6FE3F5;
+    --on-primary: #FFFFFF;
+    --water: #5EE0F2;
+    --pool-basin: #0D5E78;
+    --art-ink: #041A24;
+    --water-soft: #0C3A4B;
+    --water-mid: #165B73;
+    --deep: #03141C;
+    --deep-ink: #E8F8FB;
+    --deep-muted: #9DC3CE;
+    --coral: #FF8A75;
+    --coral-ink: #FFA594;
+    --sun: #FFDD66;
+    --sun-soft: #3D3314;
+    --otter: #C08A5E;
+    --focus: #6FE3F5;
+    --map-filter: grayscale(.35) brightness(.78);
+    --caustic-opacity: 0.38;
+    --pool-glow: rgba(94, 224, 242, 0.28);
+    --tile-grout-line: rgba(23, 72, 90, 0.72);
+
+    --cap-sun: #FFDD66;
+    --cap-sun-ink: #061F2A;
+    --cap-coral: #FF8A75;
+    --cap-coral-ink: #061F2A;
+    --cap-lime: #96E860;
+    --cap-lime-ink: #061F2A;
+    --cap-aqua: #5EE0F2;
+    --cap-aqua-ink: #061F2A;
+    --cap-violet: #A98FF5;
+    --cap-violet-ink: #061F2A;
+    --cap-orange: #FFA252;
+    --cap-orange-ink: #061F2A;
+    --cap-navy: #3C7EC2;
+    --cap-navy-ink: #FFFFFF;
+    --cap-otter: #C08A5E;
+    --cap-otter-ink: #061F2A;
+
+    color-scheme: dark;
+  }
 }
+
+/* Night swim (explicit dark) */
 :root.dark {
-  --bg: #141923;
-  --surface: #1e2633;
-  --text: #f1f5fa;
-  --muted: #b5c2d5;
-  --accent: #2457a7;
-  --accent-ink: #a9cbff;
-  --on-accent: #ffffff;
-  --line: #61708a;
-  --focus: #a9cbff;
-  --map-filter: grayscale(.4) brightness(.8);
+  --pool-deck: #061F2A;
+  --tile: #0A2E3C;
+  --grout: #17485A;
+  --ink: #E4F6F9;
+  --ink-muted: #9DC3CE;
+  --primary: #0B7393;
+  --primary-ink: #6FE3F5;
+  --on-primary: #FFFFFF;
+  --water: #5EE0F2;
+  --pool-basin: #0D5E78;
+  --art-ink: #041A24;
+  --water-soft: #0C3A4B;
+  --water-mid: #165B73;
+  --deep: #03141C;
+  --deep-ink: #E8F8FB;
+  --deep-muted: #9DC3CE;
+  --coral: #FF8A75;
+  --coral-ink: #FFA594;
+  --sun: #FFDD66;
+  --sun-soft: #3D3314;
+  --otter: #C08A5E;
+  --focus: #6FE3F5;
+  --map-filter: grayscale(.35) brightness(.78);
+  --caustic-opacity: 0.38;
+  --pool-glow: rgba(94, 224, 242, 0.28);
+  --tile-grout-line: rgba(23, 72, 90, 0.72);
+
+  --cap-sun: #FFDD66;
+  --cap-sun-ink: #061F2A;
+  --cap-coral: #FF8A75;
+  --cap-coral-ink: #061F2A;
+  --cap-lime: #96E860;
+  --cap-lime-ink: #061F2A;
+  --cap-aqua: #5EE0F2;
+  --cap-aqua-ink: #061F2A;
+  --cap-violet: #A98FF5;
+  --cap-violet-ink: #061F2A;
+  --cap-orange: #FFA252;
+  --cap-orange-ink: #061F2A;
+  --cap-navy: #3C7EC2;
+  --cap-navy-ink: #FFFFFF;
+  --cap-otter: #C08A5E;
+  --cap-otter-ink: #061F2A;
+
   color-scheme: dark;
 }
 
 @theme {
   --color-*: initial;
-  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --radius-ui: .375rem;
+  --font-display: 'Grandstander Variable', 'Grandstander', cursive, sans-serif;
+  --font-sans: 'Readex Pro Variable', 'Readex Pro', sans-serif;
+  --radius-ui: 0.75rem;
+  --radius-tile: 0.5rem;
 }
+
 @theme inline {
-  --color-bg: var(--bg);
-  --color-surface: var(--surface);
-  --color-ink: var(--text);
-  --color-muted: var(--muted);
-  --color-accent: var(--accent);
-  --color-accent-ink: var(--accent-ink);
-  --color-on-accent: var(--on-accent);
-  --color-line: var(--line);
+  --color-deck: var(--pool-deck);
+  --color-tile: var(--tile);
+  --color-grout: var(--grout);
+  --color-ink: var(--ink);
+  --color-muted: var(--ink-muted);
+  --color-primary: var(--primary);
+  --color-primary-ink: var(--primary-ink);
+  --color-on-primary: var(--on-primary);
+  --color-water: var(--water);
+  --color-water-soft: var(--water-soft);
+  --color-water-mid: var(--water-mid);
+  --color-deep: var(--deep);
+  --color-deep-ink: var(--deep-ink);
+  --color-deep-muted: var(--deep-muted);
+  --color-coral: var(--coral);
+  --color-coral-ink: var(--coral-ink);
+  --color-sun: var(--sun);
+  --color-sun-soft: var(--sun-soft);
+  --color-otter: var(--otter);
+  /* Legacy aliases for shared starter utilities */
+  --color-bg: var(--pool-deck);
+  --color-surface: var(--tile);
+  --color-accent: var(--primary);
+  --color-accent-ink: var(--primary-ink);
+  --color-on-accent: var(--on-primary);
+  --color-line: var(--grout);
 }
+
 :root {
-  --measure: 42rem;
+  --measure: 44rem;
   --jamstacks-font-family: var(--font-sans);
-  --jamstacks-color-text: var(--text);
-  --jamstacks-color-background: var(--surface);
-  --jamstacks-color-primary: var(--accent);
-  --jamstacks-color-border: var(--line);
-  --jamstacks-color-muted: var(--muted);
-  --jamstacks-color-link: var(--accent-ink);
+  --jamstacks-color-text: var(--ink);
+  --jamstacks-color-background: var(--tile);
+  --jamstacks-color-primary: var(--primary);
+  --jamstacks-color-border: var(--grout);
+  --jamstacks-color-muted: var(--ink-muted);
+  --jamstacks-color-link: var(--primary-ink);
   --jamstacks-border-radius: var(--radius-ui);
   --jamstacks-control-height: 2.75rem;
   --jamstacks-spacing: 1rem;
   --jamstacks-form-max-width: 40rem;
-  --jamstacks-toggle-color: var(--text);
-  --jamstacks-toggle-dark-color: var(--text);
-  --jamstacks-toggle-border: var(--line);
-  --jamstacks-toggle-background: var(--surface);
-  --jamstacks-toggle-dark-background: var(--surface);
+  --jamstacks-toggle-color: var(--ink);
+  --jamstacks-toggle-dark-color: var(--ink);
+  --jamstacks-toggle-border: var(--grout);
+  --jamstacks-toggle-background: var(--tile);
+  --jamstacks-toggle-dark-background: var(--tile);
   --jamstacks-toggle-focus-color: var(--focus);
 }
+
 @layer base {
-  html { background: var(--bg); color: var(--text); font-family: var(--font-sans); scroll-padding-top: 1.5rem; }
-  body { margin: 0; line-height: 1.6; }
-  main { min-height: 65vh; }
-  a { text-underline-offset: .2em; }
-  a:hover { text-decoration: underline; }
-  button { cursor: pointer; }
-  :focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; }
-  [aria-current="page"] { text-decoration: underline; }
+  html {
+    background: var(--pool-deck);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    accent-color: var(--primary);
+    scroll-padding-top: 5.5rem;
+  }
+  body {
+    margin: 0;
+    line-height: 1.6;
+    overflow-x: clip;
+  }
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.015em;
+    line-height: 1.1;
+  }
+  main {
+    min-height: 65vh;
+  }
+  a {
+    text-underline-offset: 0.22em;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  button {
+    cursor: pointer;
+  }
+  :focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+  }
+  [aria-current='page'] {
+    text-decoration: underline;
+    text-decoration-thickness: 2.5px;
+  }
 }
-@utility wrap { width: min(100% - 2rem, 72rem); margin-inline: auto; }
+
+@utility wrap {
+  width: min(100% - 2rem, 76rem);
+  margin-inline: auto;
+}
+
+@utility tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
 @layer components {
-  .button { display: inline-flex; align-items: center; justify-content: center; min-height: 2.75rem; padding: .6rem 1.2rem; border: 1px solid var(--accent); border-radius: var(--radius-ui); background: var(--accent); color: var(--on-accent); font-weight: 600; text-decoration: none; }
-  .button:hover { text-decoration: underline; }
-  .button-quiet { background: var(--surface); color: var(--accent-ink); border-color: var(--line); }
-  .text-link { color: var(--accent-ink); text-decoration: underline; }
-  .eyebrow { font-size: .8rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
-  .skip-link { position: absolute; left: 1rem; top: -8rem; padding: .75rem; z-index: 200; background: var(--surface); }
-  .skip-link:focus { top: 1rem; }
+  /* Buttons */
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 2.85rem;
+    padding: 0.65rem 1.35rem;
+    border: 2.5px solid var(--ink);
+    border-radius: 999px;
+    background: var(--primary);
+    color: var(--on-primary);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.1;
+    text-decoration: none;
+    box-shadow: 0 3px 0 var(--ink);
+    transition: transform 140ms ease, box-shadow 140ms ease, background-color 140ms ease;
+  }
+  .button:hover {
+    text-decoration: none;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 0 var(--ink);
+  }
+  .button:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 0 var(--ink);
+  }
+  .button-quiet {
+    background: var(--tile);
+    color: var(--ink);
+    border-color: var(--ink);
+  }
+  .button-sun {
+    background: var(--sun);
+    color: #0B2A36;
+    border-color: #0B2A36;
+    box-shadow: 0 3px 0 #0B2A36;
+  }
+  .button-sun:hover {
+    box-shadow: 0 4px 0 #0B2A36;
+  }
+  .text-link {
+    color: var(--primary-ink);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    font-weight: 500;
+  }
+  .skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -8rem;
+    padding: 0.75rem 1rem;
+    z-index: 200;
+    background: var(--tile);
+    color: var(--ink);
+    border: 2px solid var(--ink);
+    border-radius: var(--radius-tile);
+    font-family: var(--font-display);
+    font-weight: 700;
+  }
+  .skip-link:focus {
+    top: 1rem;
+  }
+
+  /* Ceramic pool tile textures */
+  .tile-wall {
+    background-color: var(--pool-deck);
+    background-image:
+      linear-gradient(to right, var(--tile-grout-line) 1.5px, transparent 1.5px),
+      linear-gradient(to bottom, var(--tile-grout-line) 1.5px, transparent 1.5px);
+    background-size: 28px 28px;
+  }
+  .tile-panel {
+    background-color: var(--tile);
+    background-image:
+      linear-gradient(to right, var(--tile-grout-line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--tile-grout-line) 1px, transparent 1px);
+    background-size: 32px 32px;
+    border: 2.5px solid var(--grout);
+    border-radius: 1rem;
+    box-shadow: 0 6px 0 color-mix(in srgb, var(--grout) 55%, transparent);
+  }
+  .tile-card {
+    background-color: var(--tile);
+    border: 2.5px solid var(--grout);
+    border-radius: 1rem;
+    box-shadow: 0 4px 0 color-mix(in srgb, var(--grout) 50%, transparent);
+  }
+
+  /* Water & deep-end bands with caustic net */
+  .water-band {
+    position: relative;
+    background-color: var(--water-soft);
+    background-image:
+      radial-gradient(circle at 18% 22%, var(--pool-glow) 0%, transparent 42%),
+      radial-gradient(circle at 82% 72%, var(--pool-glow) 0%, transparent 45%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cpath d='M0 40 Q40 15 80 40 T160 40 M0 120 Q40 95 80 120 T160 120 M40 0 Q65 40 40 80 T40 160 M120 0 Q145 40 120 80 T120 160' fill='none' stroke='%233CC0D8' stroke-opacity='0.22' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-size: auto, auto, 160px 160px;
+  }
+  .deep-band {
+    position: relative;
+    background-color: var(--deep);
+    color: var(--deep-ink);
+    background-image:
+      radial-gradient(circle at 15% 30%, rgba(94, 224, 242, 0.22) 0%, transparent 40%),
+      radial-gradient(circle at 85% 60%, rgba(94, 224, 242, 0.18) 0%, transparent 42%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cpath d='M0 45 Q45 18 90 45 T180 45 M0 135 Q45 108 90 135 T180 135 M45 0 Q72 45 45 90 T45 180 M135 0 Q162 45 135 90 T135 180' fill='none' stroke='%235EE0F2' stroke-opacity='0.18' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-size: auto, auto, 180px 180px;
+  }
+
+  /* Night-swim hero underwater glow */
+  .hero-pool-glow {
+    background-image:
+      radial-gradient(circle at 72% 45%, var(--pool-glow) 0%, transparent 48%),
+      radial-gradient(circle at 88% 78%, var(--pool-glow) 0%, transparent 36%),
+      linear-gradient(to right, var(--tile-grout-line) 1.5px, transparent 1.5px),
+      linear-gradient(to bottom, var(--tile-grout-line) 1.5px, transparent 1.5px);
+    background-size: auto, auto, 28px 28px, 28px 28px;
+  }
+
+  /* Theme-paired hero artwork (light, media-dark, and explicit-dark) */
+  .hero-image-light {
+    display: block;
+  }
+  .hero-image-dark {
+    display: none;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not(.light) .hero-image-light {
+      display: none;
+    }
+    :root:not(.light) .hero-image-dark {
+      display: block;
+    }
+  }
+  :root.dark .hero-image-light {
+    display: none;
+  }
+  :root.dark .hero-image-dark {
+    display: block;
+  }
+
+  /* Painted ceramic depth marker */
+  .depth-marker {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    padding: 0.28rem 0.7rem;
+    background: var(--tile);
+    color: var(--ink);
+    border: 2.5px solid var(--ink);
+    border-radius: 0.45rem;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    box-shadow: inset 0 0 0 2px var(--grout);
+  }
+
+  /* Filter chips */
+  .filter-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    min-height: 2.5rem;
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    border: 2px solid var(--grout);
+    background: var(--tile);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background-color 120ms ease, border-color 120ms ease, transform 120ms ease;
+  }
+  .filter-chip:hover {
+    border-color: var(--ink);
+  }
+  .filter-chip[aria-pressed='true'] {
+    background: var(--primary);
+    color: var(--on-primary);
+    border-color: var(--ink);
+    box-shadow: 0 2px 0 var(--ink);
+  }
+
+  /* Poolside tilted safety sign */
+  .safety-sign {
+    background: var(--tile);
+    color: var(--ink);
+    border: 3px solid var(--ink);
+    border-radius: 0.85rem;
+    box-shadow: 0 6px 0 rgba(3, 20, 28, 0.35);
+    position: relative;
+  }
 }
-.map iframe { width: 100%; min-height: 20rem; border: 0; filter: var(--map-filter); }
-.enquiry__host { display: block; }
-.enquiry__status { margin-top: 1rem; color: var(--muted); }
-.enquiry[data-state="present"] > .enquiry__status { display: none; }
+
+/* Lane-rope float bob animation */
+@keyframes float-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+.lane-rope-interactive:hover .lane-float,
+.lane-rope-interactive:focus-within .lane-float,
+.lane-row:hover .lane-float,
+.lane-row:focus-within .lane-float {
+  animation: float-bob 1.1s ease-in-out infinite;
+}
+.lane-rope-interactive:hover .lane-float:nth-child(even),
+.lane-rope-interactive:focus-within .lane-float:nth-child(even),
+.lane-row:hover .lane-float:nth-child(even),
+.lane-row:focus-within .lane-float:nth-child(even) {
+  animation-delay: 0.22s;
+}
+
+/* Progressive scroll-driven section reveals */
+@media (prefers-reduced-motion: no-preference) {
+  @supports ((animation-timeline: view()) and (animation-range: entry)) {
+    @keyframes tile-rise {
+      from {
+        opacity: 0.35;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .scroll-reveal {
+      animation: tile-rise auto linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 28%;
+    }
+  }
+}
+
+/* Map and Jamstacks support form */
+.map iframe {
+  width: 100%;
+  min-height: 20rem;
+  border: 0;
+  filter: var(--map-filter);
+}
+.enquiry__host {
+  display: block;
+}
+.enquiry__status {
+  margin-top: 1rem;
+  color: var(--ink-muted);
+}
+.enquiry[data-state='present'] > .enquiry__status {
+  display: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
 }
+
 @media print {
-  nav, .skip-link, .enquiry, button { display: none !important; }
-  html { background: white; color: black; }
-  a { color: inherit; }
+  nav, .skip-link, .enquiry, button, .no-print, .hero-image-dark {
+    display: none !important;
+  }
+  .hero-image-light {
+    display: block !important;
+  }
+  html, body {
+    background: #ffffff !important;
+    color: #0B2A36 !important;
+  }
+  .deep-band, .water-band, .tile-wall, .tile-panel {
+    background: #ffffff !important;
+    color: #0B2A36 !important;
+    box-shadow: none !important;
+  }
+  a {
+    color: inherit;
+  }
 }

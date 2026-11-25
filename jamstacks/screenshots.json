@@ -1,0 +1,22 @@
+{
+  "templateId": "next-swim-school",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "captures": [
+    {
+      "mode": "light",
+      "sha256": "795f5e8e0e52495459705168caf393121a7357fd67b989cb239423d9c9816b4d",
+      "file": "jamstacks/home-light.jpg",
+      "bytes": 245616
+    },
+    {
+      "mode": "dark",
+      "sha256": "53dd067531e93a473225ae7198bcee310410a6c7f92759b119eacfa368ad591d",
+      "file": "jamstacks/home-dark.jpg",
+      "bytes": 242014
+    }
+  ]
+}
